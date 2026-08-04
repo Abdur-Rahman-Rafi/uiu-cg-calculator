@@ -54,7 +54,8 @@ export default function FeeCalculator({ isDarkMode, setIsDarkMode, activeTab, se
     const repeatFee = repeatCr * creditFee; // Exclude repeats from eligibility too
     
     // Step 4: Eligibility & Waiver Application
-    const eligibleForDiscount = Math.max(0, feeAfterRetake - fydpFee - repeatFee);
+    const regularCredits = Math.max(0, totalCr - fydpCr - firstRetakeCr - repeatCr);
+    const eligibleForDiscount = regularCredits * creditFee;
     
     const combinedDiscountPercent = (Number(waiver) || 0) + (Number(scholarship) || 0);
     const appliedDiscountPercent = Math.min(100, combinedDiscountPercent);
@@ -332,6 +333,7 @@ export default function FeeCalculator({ isDarkMode, setIsDarkMode, activeTab, se
                      amount={gymAmount} setAmount={setGymAmount}
                      options={[
                        { label: 'Standard (৳1,000)', value: 1000 },
+                       { label: 'Advanced (৳1,500)', value: 1500 },
                        { label: 'Premium (৳2,500)', value: 2500 }
                      ]}
                    />
