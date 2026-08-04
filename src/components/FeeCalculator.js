@@ -50,8 +50,7 @@ export default function FeeCalculator({ isDarkMode, setIsDarkMode, activeTab, se
     const feeAfterRetake = totalBaseFee - firstRetakeDiscount;
     
     // Step 3: FYDP (Excluded from scholarship eligibility)
-    const fydpFee = fydpCr * creditFee;
-    const repeatFee = repeatCr * creditFee; // Exclude repeats from eligibility too
+    // FYDP and Repeat Retake credits are billed at full price, so we just exclude them from the discount eligibility below.
     
     // Step 4: Eligibility & Waiver Application
     const regularCredits = Math.max(0, totalCr - fydpCr - firstRetakeCr - repeatCr);
