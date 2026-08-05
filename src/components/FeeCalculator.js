@@ -56,8 +56,8 @@ export default function FeeCalculator({ isDarkMode, setIsDarkMode, activeTab, se
     const regularCredits = Math.max(0, totalCr - fydpCr - firstRetakeCr - repeatCr);
     const eligibleForDiscount = regularCredits * creditFee;
     
-    const combinedDiscountPercent = (Number(waiver) || 0) + (Number(scholarship) || 0);
-    const appliedDiscountPercent = Math.min(100, combinedDiscountPercent);
+    const maxDiscountPercent = Math.max(Number(waiver) || 0, Number(scholarship) || 0);
+    const appliedDiscountPercent = Math.min(100, maxDiscountPercent);
     const waiverAndScholarshipAmount = eligibleForDiscount * (appliedDiscountPercent / 100);
 
     const netTuitionAndReg = feeAfterRetake - waiverAndScholarshipAmount;
@@ -99,8 +99,8 @@ export default function FeeCalculator({ isDarkMode, setIsDarkMode, activeTab, se
   };
 
   const ExtrasInput = ({ label, enabled, setEnabled, amount, setAmount, options }) => (
-    <div className="flex items-center gap-4 bg-slate-50 dark:bg-gray-800/50 p-4 rounded-2xl border border-slate-200 dark:border-white/5">
-      <div className="flex items-center gap-3 w-1/3">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-slate-50 dark:bg-gray-800/50 p-4 rounded-2xl border border-slate-200 dark:border-white/5">
+      <div className="flex items-center gap-3 w-full sm:w-1/3">
         <input 
           type="checkbox" 
           checked={enabled} 
@@ -109,7 +109,7 @@ export default function FeeCalculator({ isDarkMode, setIsDarkMode, activeTab, se
         />
         <label className="text-sm font-bold text-slate-700 dark:text-slate-300">{label}</label>
       </div>
-      <div className="w-2/3">
+      <div className="w-full sm:w-2/3">
         <select 
           value={amount}
           onChange={(e) => setAmount(Number(e.target.value))}

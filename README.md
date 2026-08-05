@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# UIU CGPA & Fee Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive, and easy-to-use web application to calculate CGPA and Semester Fees for United International University (UIU) students. Built with React and Tailwind CSS.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **CGPA Calculator**: Add courses, specify credits and grades, and calculate your current semester GPA as well as overall CGPA.
+- **Fee Calculator**: Estimate your semester tuition fees by entering total credits, waivers, scholarships, and any extras like gym or transportation fees. Includes breakdown of installments.
+- **Dark/Light Mode**: Full support for both dark and light color schemes.
+- **Responsive Design**: Works flawlessly on mobile, tablet, and desktop devices.
+- **Local Storage**: Automatically saves your inputted data in the browser so you don't lose it if you refresh.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Framework**: React.js
+- **Styling**: Tailwind CSS
+- **Icons**: Heroicons (SVGs)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+To run this project locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Make sure you have Node.js and npm installed on your machine.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Abdur-Rahman-Rafi/uiu-cg-calculator.git
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd uiu-cg-calculator
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app will be available at [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+## How to Contribute
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Contributions are always welcome! Whether it's reporting a bug, suggesting a new feature, or submitting a pull request, your help is appreciated.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Fork the Repository**: Click the "Fork" button at the top right of this page.
+2. **Clone your Fork**: `git clone https://github.com/YOUR_USERNAME/uiu-cg-calculator.git`
+3. **Create a Branch**: `git checkout -b feature/your-feature-name`
+4. **Make Changes**: Implement your feature or bug fix.
+5. **Commit your Changes**: `git commit -m 'Add some amazing feature'`
+6. **Push to the Branch**: `git push origin feature/your-feature-name`
+7. **Open a Pull Request**: Go to the original repository and click "Compare & pull request".
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Coding Guidelines
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Ensure your code follows the existing style and conventions.
+- Use Tailwind CSS for styling whenever possible.
+- Test your changes thoroughly on both mobile and desktop views to ensure responsiveness is maintained.
+- If you're adding a new feature, consider updating this README with relevant information.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is open source and available under the [MIT License](LICENSE).
