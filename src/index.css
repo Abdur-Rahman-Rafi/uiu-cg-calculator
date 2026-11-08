@@ -27,6 +27,11 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -35,11 +40,32 @@ body {
   background-color: var(--uiu-bg);
   color: var(--text-main);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
-/* Force Inter everywhere for consistency */
+/* Force Inter everywhere for consistency and clean mobile tap highlight */
 * {
   font-family: 'Inter', sans-serif !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safe area padding utilities for modern smartphones (iPhone notch/island/home-indicator) */
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 1rem);
+}
+
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top, 0px), 0.5rem);
+}
+
+/* Prevent unwanted zoom on Mobile Safari when focusing inputs */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
 }
 
 .glass {
@@ -95,12 +121,21 @@ body {
   to { opacity: 1; }
 }
 
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .animate-slide-up {
-  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Hide spin buttons */
@@ -112,4 +147,28 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+/* Custom dropdown arrow for mobile & desktop */
+.select-custom {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.25rem !important;
+}
+
+.dark .select-custom {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+}
+
+/* Print optimizations */
+@media print {
+  nav, footer, .no-print, button, aside {
+    display: none !important;
+  }
+  body, .bg-slate-50, .dark, .glass {
+    background: white !important;
+    color: black !important;
+  }
 }
